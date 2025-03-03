@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <TextView
+        android:id="@+id/AppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="24sp"
+        android:textColor="@color/theme"
+        android:layout_gravity="start"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="122dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slogan"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_gravity="start"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="162dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rent_img"
+        android:layout_width="343dp"
+        android:layout_height="343dp"
+        android:src="@drawable/main_logo"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="245dp"
+        android:contentDescription="@string/main_image_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/log_in_btn"
+        android:layout_width="342dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@color/theme"
+        android:text="@string/log_in"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="638dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sign_up__btn"
+        android:layout_width="342dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/sign_up"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="#344054"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:strokeWidth="1.5dp"
+        app:strokeColor="#D0D5DD"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="710dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

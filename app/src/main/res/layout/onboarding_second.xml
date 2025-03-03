@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <Button
+        android:id="@+id/miss_btn"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:layout_marginStart="261dp"
+        android:padding="0dp"
+        android:layout_marginTop="74dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/miss_btn"
+        android:textColor="@color/theme"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/rent_img"
+        android:layout_width="355dp"
+        android:layout_height="324dp"
+        android:src="@drawable/onboarding_second"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="159dp"
+        android:contentDescription="@string/rent_image_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/car_rent"
+        android:layout_width="277dp"
+        android:layout_height="29dp"
+        android:gravity="start"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="550dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/safe"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/car_rent_txt"
+        android:layout_width="310dp"
+        android:layout_height="34dp"
+        android:gravity="start"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="603dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/safe_txt"
+        android:textColor="#1A1A1A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/line_first"
+        android:layout_width="88dp"
+        android:layout_height="8dp"
+        android:src="@drawable/line_second"
+        android:layout_marginStart="37.5dp"
+        android:layout_marginTop="712dp"
+        android:contentDescription="@string/line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_btn"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/theme"
+        android:text="@string/next_btn"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="14dp"
+        android:layout_marginStart="241.5dp"
+        android:layout_marginTop="687dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

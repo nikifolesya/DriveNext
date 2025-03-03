@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <TextView
+        android:id="@+id/main_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_acc"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="20sp"
+        android:textColor="#1A1A1A"
+        android:layout_gravity="start"
+        android:layout_marginTop="74dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp" />
+
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="@string/back_btn"
+        android:src="@drawable/chevron_left"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"/>
+
+    <FrameLayout
+        android:id="@+id/load_photo"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="32dp" >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@drawable/account_photo"
+            android:contentDescription="@string/load_photo"/>
+
+        <ImageButton
+            android:id="@+id/buttonUpload"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:src="@drawable/add_btn"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginEnd="-8dp"
+            android:contentDescription="@string/load_photo"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/add_photo_txt"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_photo_txt"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="13sp"
+        android:textColor="#1A1A1A"
+        app:layout_constraintTop_toBottomOf="@id/load_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="32dp" />
+
+    <TextView
+        android:id="@+id/licence_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/licence_id"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="#404040"
+        app:layout_constraintTop_toBottomOf="@id/add_photo_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="68dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/licenceInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="@string/licence_valid"
+        app:boxBackgroundMode="none"
+        app:layout_constraintTop_toBottomOf="@id/licence_form"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-4dp"
+        android:layout_marginHorizontal="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/licenceEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_line"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="14sp"
+            android:textColor="#667085"
+            android:inputType="textPersonName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/date_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/issue_date"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="#404040"
+        app:layout_constraintTop_toBottomOf="@id/licenceInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="253dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="@string/birth_format"
+        app:boxBackgroundMode="none"
+        app:endIconMode="custom"
+        app:layout_constraintTop_toBottomOf="@id/licenceInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="32dp">
+        
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/calendar_days"
+            android:contentDescription="@string/calendar"
+            android:layout_marginTop="-36dp"
+            android:layout_marginStart="14dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_line"
+            android:paddingStart="42dp"
+            android:paddingEnd="14dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="14sp"
+            android:textColor="#667085"
+            android:inputType="date"
+            android:importantForAccessibility="yes"
+            android:maxLength="10"
+            android:focusable="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/load_licence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/load_licence"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="#404040"
+        app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="5dp"/>
+
+
+    <ImageButton
+        android:id="@+id/upload_photo_btn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/upload"
+        android:contentDescription="@string/load_photo"
+        app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="42dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="297dp"/>
+
+    <TextView
+        android:id="@+id/upload_photo_txt1"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/load_photo"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="#667085"
+        app:layout_constraintTop_toBottomOf="@id/dateInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="58dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="100dp" />
+
+
+    <TextView
+        android:id="@+id/load_passport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/load_passport"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="14sp"
+        android:textColor="#404040"
+        app:layout_constraintTop_toBottomOf="@id/upload_photo_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="162dp"/>
+
+
+    <ImageButton
+        android:id="@+id/upload_photo_btn2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:src="@drawable/upload"
+        android:contentDescription="@string/load_photo"
+        app:layout_constraintTop_toBottomOf="@id/upload_photo_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="42dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="297dp"/>
+
+    <TextView
+        android:id="@+id/upload_photo_txt2"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="@string/load_photo"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textColor="#667085"
+        app:layout_constraintTop_toBottomOf="@id/upload_photo_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="58dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginEnd="100dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_btn"
+        android:layout_width="342dp"
+        android:layout_height="62dp"
+        android:backgroundTint="@color/theme"
+        android:text="@string/next_btn"
+        android:fontFamily="@font/montserrat_medium"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        android:layout_marginTop="758dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"  />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
