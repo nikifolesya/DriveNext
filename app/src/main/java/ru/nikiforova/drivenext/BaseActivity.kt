@@ -64,4 +64,16 @@ open class BaseActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+    fun setLocale(context: Context, languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        config.setLayoutDirection(locale)
+
+        context.createConfigurationContext(config)
+    }
+
 }

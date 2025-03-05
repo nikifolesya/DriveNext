@@ -24,19 +24,12 @@ class NoInternetActivity : AppCompatActivity() {
     private fun checkNetworkAndReturn() {
         // Проверяем доступность сети
         if (NetworkUtil.isNetworkAvailable(this)) {
-            // Если сеть доступна, проверяем доступность интернета
-            CoroutineScope(Dispatchers.Main).launch {
-                if (NetworkUtil.isInternetAvailable()) {
-                    // Если интернет доступен, переходим на предыдущую активность
-                    val previousActivity = getSharedPreferences("app_prefs", MODE_PRIVATE)
-                        .getString("previous_activity", WelcomeActivity::class.java.name)
-                    val intent = Intent().setClassName(this@NoInternetActivity, previousActivity!!)
-                    startActivity(intent)
-                    finish()
-                } else {
-                    showToast("Интернет-соединение недоступно.")
-                }
-            }
+            // Если сеть доступна, сразу переходим на предыдущую активность
+            val previousActivity = getSharedPreferences("app_prefs", MODE_PRIVATE)
+                .getString("previous_activity", WelcomeActivity::class.java.name)
+            val intent = Intent().setClassName(this@NoInternetActivity, previousActivity!!)
+            startActivity(intent)
+            finish()
         } else {
             showToast("Сеть недоступна.")
         }

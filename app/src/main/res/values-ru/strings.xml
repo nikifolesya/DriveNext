@@ -1,10 +1,5 @@
 <resources>
-    <string name="slogan">Поможем найти твою следующую поездку</string>
-    <string name="app_name" translatable="false">DriveNext</string>
-    <string name="main_image_description" translatable="false">Main Logo</string>
-    <string name="rent_image_description" translatable="false">Rent IMG</string>
-    <string name="line" translatable="false">Process line</string>
-    <string name="no_internet_icon" translatable="false">No Internet Connection</string>
+    <string name="slogan" translatable="false">Поможем найти твою следующую поездку</string>
     <string name="no_connection">Нет подключения к интернету</string>
     <string name="no_connection_retry">Проверьте подключение и повторите попытку</string>
     <string name="miss_btn">Пропустить</string>
@@ -34,7 +29,6 @@
     <string name="create_pass">Придумайте пароль</string>
     <string name="repeat_pass">Повторите пароль</string>
     <string name="privacy">Я согласен с условиями обслуживания и политикой конфиденциальности</string>
-    <string name="back_btn" translatable="false">Back Button</string>
     <string name="surname">Фамилия</string>
     <string name="input_surname">Введите фамилию</string>
     <string name="name">Имя</string>
@@ -45,16 +39,13 @@
     <string name="gender">Пол</string>
     <string name="male">Мужской</string>
     <string name="female">Женский</string>
-    <string name="birth_format" translatable="false">DD/MM/YYYY</string>
-    <string name="calendar" translatable="false">calendar</string>
     <string name="add_photo_txt">Добавление фотографии поможет владельцам и арендаторам узнать друг друга, когда они будут забирать машину</string>
     <string name="licence_id">Номер водительского удостоверения</string>
-    <string name="licence_valid" translatable="false">0000000000</string>
     <string name="issue_date">Дата выдачи</string>
     <string name="load_licence">Загрузите фото водительского удостоверения</string>
     <string name="load_passport">Загрузите фото паспорта</string>
     <string name="load_photo">Загрузить фото</string>
-    
+
 
 
 </resources>
