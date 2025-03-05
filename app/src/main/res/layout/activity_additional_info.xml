@@ -22,6 +22,7 @@
         android:layout_marginHorizontal="32dp" />
 
     <ImageButton
+        android:id="@+id/back_btn"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="64dp"
@@ -220,6 +221,7 @@
         android:layout_marginEnd="317dp"/>
 
     <RadioGroup
+        android:id="@+id/genderRadioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -230,6 +232,7 @@
         android:layout_marginHorizontal="32dp">
 
         <RadioButton
+            android:id="@+id/radio_btn_male"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:buttonTint="@color/custom_radiobutton"
@@ -240,6 +243,7 @@
             android:layout_marginEnd="32dp"/>
 
         <RadioButton
+            android:id="@+id/radio_btn_female"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:buttonTint="@color/custom_radiobutton"

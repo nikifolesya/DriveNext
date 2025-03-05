@@ -1,4 +1,5 @@
 <resources>
+    <string name="slogan">Поможем найти твою следующую поездку</string>
     <string name="app_name" translatable="false">DriveNext</string>
     <string name="main_image_description">Main Logo</string>
     <string name="rent_image_description">Rent IMG</string>
