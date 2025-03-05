@@ -1,20 +1,16 @@
 package ru.nikiforova.drivenext
 
 import android.content.Intent
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
-class UploadDocumentsActivity : AppCompatActivity() {
+class UploadDocumentsActivity : BaseActivity() { // Наследуем BaseActivity
 
     private lateinit var licenseNumberEditText: TextInputEditText
     private lateinit var issueDateEditText: TextInputEditText
@@ -71,12 +67,6 @@ class UploadDocumentsActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
-
-        // Пример проверки интернет-соединения
-        if (!isInternetAvailable()) {
-            startActivity(Intent(this, NoInternetActivity::class.java))
-            finish()
-        }
     }
 
     private fun openImagePicker() {
@@ -86,17 +76,6 @@ class UploadDocumentsActivity : AppCompatActivity() {
     private fun isValidIssueDate(issueDate: String): Boolean {
         val regex = Regex("""\d{2}/\d{2}/\d{4}""")
         return regex.matches(issueDate)
-    }
-
-    private fun isInternetAvailable(): Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val network = connectivityManager.activeNetwork ?: return false
-        val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
-        return when {
-            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-            activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-            else -> false
-        }
     }
 
     private fun saveCurrentActivity() {

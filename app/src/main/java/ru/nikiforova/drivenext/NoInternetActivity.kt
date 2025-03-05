@@ -1,43 +1,13 @@
 package ru.nikiforova.drivenext
 
-import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
 import android.os.Bundle
+import com.google.android.material.button.MaterialButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.io.IOException
-import java.net.InetSocketAddress
-import java.net.Socket
-
-object NetworkUtil {
-    fun isNetworkAvailable(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val network = connectivityManager.activeNetwork ?: return false
-        val capabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
-        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-    }
-
-    suspend fun isInternetAvailable(): Boolean {
-        return withContext(Dispatchers.IO) {
-            try {
-                val socket = Socket()
-                socket.connect(InetSocketAddress("8.8.8.8", 53), 1500)
-                socket.close()
-                true
-            } catch (e: IOException) {
-                false
-            }
-        }
-    }
-}
 
 class NoInternetActivity : AppCompatActivity() {
 
@@ -47,25 +17,28 @@ class NoInternetActivity : AppCompatActivity() {
 
         val retryButton: MaterialButton = findViewById(R.id.btn_retry)
         retryButton.setOnClickListener {
-            checkInternetAndReturn()
+            checkNetworkAndReturn()
         }
     }
 
-    private fun checkInternetAndReturn() {
+    private fun checkNetworkAndReturn() {
+        // Проверяем доступность сети
         if (NetworkUtil.isNetworkAvailable(this)) {
+            // Если сеть доступна, проверяем доступность интернета
             CoroutineScope(Dispatchers.Main).launch {
                 if (NetworkUtil.isInternetAvailable()) {
+                    // Если интернет доступен, переходим на предыдущую активность
                     val previousActivity = getSharedPreferences("app_prefs", MODE_PRIVATE)
                         .getString("previous_activity", WelcomeActivity::class.java.name)
                     val intent = Intent().setClassName(this@NoInternetActivity, previousActivity!!)
                     startActivity(intent)
                     finish()
                 } else {
-                    showToast("Нет подключения к интернету. Проверьте подключение и повторите попытку.")
+                    showToast("Интернет-соединение недоступно.")
                 }
             }
         } else {
-            showToast("Нет подключения к интернету. Проверьте подключение и повторите попытку.")
+            showToast("Сеть недоступна.")
         }
     }
 
