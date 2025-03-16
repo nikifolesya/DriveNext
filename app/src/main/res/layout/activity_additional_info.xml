@@ -43,16 +43,15 @@
         android:textColor="#404040"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="280dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="136dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/surnameInputLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="@string/input_surname"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="159dp"
         app:boxBackgroundMode="none"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"
@@ -83,10 +83,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toBottomOf="@id/surnameInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginEnd="316dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameInputLayout"
@@ -97,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@id/surnameInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="39dp"
         android:layout_marginHorizontal="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -105,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"
@@ -123,10 +122,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginEnd="280dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/patronymicInputLayout"
@@ -137,7 +134,7 @@
         app:layout_constraintTop_toBottomOf="@id/nameInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="39dp"
         android:layout_marginHorizontal="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -145,6 +142,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"
@@ -163,10 +161,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toBottomOf="@id/patronymicInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginEnd="230dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/birthInputLayout"
@@ -178,7 +174,7 @@
         app:layout_constraintTop_toBottomOf="@id/patronymicInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="39dp"
         android:layout_marginHorizontal="32dp">
         
         <ImageView
@@ -186,7 +182,7 @@
             android:layout_height="20dp"
             android:src="@drawable/calendar_days"
             android:contentDescription="@string/calendar"
-            android:layout_marginTop="-36dp"
+            android:layout_marginTop="-34dp"
             android:layout_marginStart="14dp"/>
 
         <com.google.android.material.textfield.TextInputEditText
@@ -194,6 +190,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="42dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"
@@ -215,10 +212,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toBottomOf="@id/birthInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginEnd="317dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
 
     <RadioGroup
         android:id="@+id/genderRadioGroup"
@@ -228,7 +223,7 @@
         app:layout_constraintTop_toBottomOf="@id/birthInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="39dp"
         android:layout_marginHorizontal="32dp">
 
         <RadioButton

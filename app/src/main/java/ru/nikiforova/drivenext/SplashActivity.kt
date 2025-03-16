@@ -1,9 +1,11 @@
 package ru.nikiforova.drivenext
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import java.util.*
 
 class SplashActivity : BaseActivity() {
 
@@ -14,10 +16,22 @@ class SplashActivity : BaseActivity() {
         saveCurrentActivity()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (isFirstLaunch() || !isAccessTokenValid()) {
-                startActivity(Intent(this, WelcomeActivity::class.java))
+            val sharedPreferences: SharedPreferences = getSharedPreferences("app_prefs", MODE_PRIVATE)
+            val language = sharedPreferences.getString("app_language", null)
+
+            if (language == null) {
+                // Если язык не выбран, переходим на экран выбора языка
+                startActivity(Intent(this, LanguageActivity::class.java))
             } else {
-                startActivity(Intent(this, LoginRegisterActivity::class.java))
+                // Применяем язык
+                applyLanguage(language)
+
+                // Проверяем, первый ли запуск или есть ли токен доступа
+                if (isFirstLaunch() || !isAccessTokenValid()) {
+                    startActivity(Intent(this, WelcomeActivity::class.java))
+                } else {
+                    startActivity(Intent(this, LoginRegisterActivity::class.java))
+                }
             }
             finish()
         }, 2000)
@@ -40,5 +54,21 @@ class SplashActivity : BaseActivity() {
             putString("previous_activity", this@SplashActivity::class.java.name)
             apply()
         }
+    }
+
+    private fun applyLanguage(language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+
+        val config = resources.configuration
+        config.setLocale(locale)
+        config.setLayoutDirection(locale)
+
+        createConfigurationContext(config)
+
+        // Перезапускаем SplashActivity, чтобы язык применился во всем приложении
+        val refreshIntent = Intent(this, SplashActivity::class.java)
+        startActivity(refreshIntent)
+        finish()
     }
 }

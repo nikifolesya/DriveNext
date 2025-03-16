@@ -46,9 +46,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="205dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="278dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInputLayout"
@@ -69,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"
@@ -88,10 +88,8 @@
         android:textColor="#404040"
         app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginEnd="290dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordInputLayout"
@@ -104,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@id/emailInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="38dp"
         android:layout_marginHorizontal="32dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -112,6 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border_line"
+            android:gravity="bottom"
             android:paddingStart="14dp"
             android:paddingEnd="14dp"
             android:fontFamily="@font/montserrat_regular"

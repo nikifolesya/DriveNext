@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.Locale
 
 open class BaseActivity : AppCompatActivity() {
 
@@ -30,10 +31,12 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        applyLanguage() // Устанавливаем язык перед загрузкой интерфейса
         super.onCreate(savedInstanceState)
         saveCurrentActivity()
         connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     }
+
 
     override fun onResume() {
         super.onResume()
@@ -65,15 +68,19 @@ open class BaseActivity : AppCompatActivity() {
         finish()
     }
 
-    fun setLocale(context: Context, languageCode: String) {
-        val locale = Locale(languageCode)
+    private fun applyLanguage() {
+        val sharedPreferences = getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        val language = sharedPreferences.getString("app_language", "ru") // По умолчанию русский
+
+        val locale = Locale(language!!)
         Locale.setDefault(locale)
 
-        val config = context.resources.configuration
+        val config = resources.configuration
         config.setLocale(locale)
-        config.setLayoutDirection(locale)
 
-        context.createConfigurationContext(config)
+        createConfigurationContext(config)
     }
+
+
 
 }

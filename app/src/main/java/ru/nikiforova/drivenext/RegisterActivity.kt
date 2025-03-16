@@ -9,7 +9,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
 
-class RegisterActivity : BaseActivity() { // Наследуем от BaseActivity
+class RegisterActivity : BaseActivity() {
 
     private lateinit var emailEditText: TextInputEditText
     private lateinit var passwordEditText1: TextInputEditText

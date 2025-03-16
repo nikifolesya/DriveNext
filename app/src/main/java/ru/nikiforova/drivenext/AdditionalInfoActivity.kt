@@ -1,5 +1,6 @@
 package ru.nikiforova.drivenext
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
@@ -8,6 +9,9 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class AdditionalInfoActivity : BaseActivity() {
 
@@ -33,6 +37,11 @@ class AdditionalInfoActivity : BaseActivity() {
         nextButton = findViewById(R.id.next_btn)
         backButton = findViewById(R.id.back_btn)
 
+        // Устанавливаем обработчик нажатия на поле даты
+        birthDateEditText.setOnClickListener {
+            showDatePickerDialog()
+        }
+
         nextButton.setOnClickListener {
             val lastName = lastNameEditText.text.toString()
             val firstName = firstNameEditText.text.toString()
@@ -50,6 +59,25 @@ class AdditionalInfoActivity : BaseActivity() {
         backButton.setOnClickListener {
             finish()
         }
+    }
+
+    private fun showDatePickerDialog() {
+        val calendar = Calendar.getInstance()
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, year, month, dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year, month, dayOfMonth)
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                birthDateEditText.setText(dateFormat.format(selectedDate.time))
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+
+        datePickerDialog.show()
     }
 
     private fun isValidBirthDate(birthDate: String): Boolean {
