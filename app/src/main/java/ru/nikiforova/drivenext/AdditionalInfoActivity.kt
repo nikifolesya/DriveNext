@@ -37,7 +37,11 @@ class AdditionalInfoActivity : BaseActivity() {
         nextButton = findViewById(R.id.next_btn)
         backButton = findViewById(R.id.back_btn)
 
-        // Устанавливаем обработчик нажатия на поле даты
+        // Получаем email и пароль из предыдущей активности
+        val email = intent.getStringExtra("email") ?: ""
+        val password = intent.getStringExtra("password") ?: ""
+
+        // Обработка выбора даты рождения
         birthDateEditText.setOnClickListener {
             showDatePickerDialog()
         }
@@ -45,12 +49,23 @@ class AdditionalInfoActivity : BaseActivity() {
         nextButton.setOnClickListener {
             val lastName = lastNameEditText.text.toString()
             val firstName = firstNameEditText.text.toString()
+            val middleName = middleNameEditText.text.toString()
             val birthDate = birthDateEditText.text.toString()
             val selectedGenderId = genderRadioGroup.checkedRadioButtonId
             val gender = if (selectedGenderId != -1) findViewById<RadioButton>(selectedGenderId).text.toString() else ""
 
-            if (lastName.isNotEmpty() && firstName.isNotEmpty() && isValidBirthDate(birthDate) && gender.isNotEmpty()) {
-                startActivity(Intent(this, UploadDocumentsActivity::class.java))
+            if (lastName.isNotEmpty() && firstName.isNotEmpty() && middleName.isNotEmpty() &&
+                isValidBirthDate(birthDate) && gender.isNotEmpty()) {
+
+                val intent = Intent(this, UploadDocumentsActivity::class.java)
+                intent.putExtra("email", email)
+                intent.putExtra("password", password)
+                intent.putExtra("lastName", lastName)
+                intent.putExtra("firstName", firstName)
+                intent.putExtra("middleName", middleName)
+                intent.putExtra("birthDate", birthDate)
+                intent.putExtra("gender", gender)
+                startActivity(intent)
             } else {
                 showToast("Пожалуйста, заполните все обязательные поля.")
             }

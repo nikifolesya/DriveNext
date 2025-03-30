@@ -45,7 +45,27 @@
     <string name="load_licence">Загрузите фото водительского удостоверения</string>
     <string name="load_passport">Загрузите фото паспорта</string>
     <string name="load_photo">Загрузить фото</string>
-
+    <string name="settings">Настройки</string>
+    <string name="full_name">Имя Фамилия</string>
+    <string name="my_booking">Мои бронирования</string>
+    <string name="theme">Тема</string>
+    <string name="notifications">Уведомления</string>
+    <string name="connect_car">Подключить свой автомобиль</string>
+    <string name="help">Помощь</string>
+    <string name="inviting">Пригласи друга</string>
+    <string name="no_saved_cars">Нет сохраненный автомобилей</string>
+    <string name="profile">Профиль</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="logout">Выйти из профиля</string>
+    <string name="joined">Присоединился в</string>
+    <string name="looking_for_cars">Ищем подходящие автомобили</string>
+    <string name="book">Забронировать</string>
+    <string name="details">Детали</string>
+    <string name="engine_type">Бензин</string>
+    <string name="per_day">%1$s в день</string>
+    <string name="search_hint">Введите марку автомобиля</string>
+    <string name="find_car">Давайте найдем автомобиль</string>
+    <string name="search_result">Результаты поиска</string>
 
 
 </resources>

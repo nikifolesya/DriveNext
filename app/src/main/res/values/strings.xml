@@ -54,7 +54,42 @@
     <string name="load_licence">Загрузите фото водительского удостоверения</string>
     <string name="load_passport">Загрузите фото паспорта</string>
     <string name="load_photo">Загрузить фото</string>
-    
+    <string name="settings">Настройки</string>
+    <string name="full_name">Имя Фамилия</string>
+    <string name="my_booking">Мои бронирования</string>
+    <string name="theme">Тема</string>
+    <string name="notifications">Уведомления</string>
+    <string name="connect_car">Подключить свой автомобиль</string>
+    <string name="help">Помощь</string>
+    <string name="inviting">Пригласи друга</string>
+    <string name="email_temp" translatable="false">mail@mail.ru</string>
+    <string name="next_arrow" translatable="false">next arrow</string>
+    <string name="booking_icon" translatable="false">booking icon</string>
+    <string name="theme_icon" translatable="false">theme icon</string>
+    <string name="bell_icon" translatable="false">bell icon</string>
+    <string name="cash_icon" translatable="false">cash icon</string>
+    <string name="help_icon" translatable="false">help icon</string>
+    <string name="mail_icon" translatable="false">mail icon</string>
+    <string name="home_icon" translatable="false">home icon</string>
+    <string name="bookmark" translatable="false">bookmark</string>
+    <string name="settings_icon" translatable="false">settings icon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="no_saved_cars">Нет сохраненных автомобилей</string>
+    <string name="profile">Профиль</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="google" translatable="false">Google</string>
+    <string name="logout">Выйти из профиля</string>
+    <string name="joined">Присоединился в</string>
+    <string name="looking_for_cars">Ищем подходящие автомобили</string>
+    <string name="book">Забронировать</string>
+    <string name="details">Детали</string>
+    <string name="engine_type">Бензин</string>
+    <string name="transmission" translatable="false">A/T</string>
+    <string name="per_day">%1$s в день</string>
+    <string name="search_hint">Введите марку автомобиля</string>
+    <string name="find_car">Давайте найдем автомобиль</string>
+    <string name="search_result">Результаты поиска</string>
 
 
 </resources>

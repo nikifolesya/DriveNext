@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <TextView
+        android:id="@+id/settings_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="16sp"
+        android:textColor="#101828"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp" />
+
+    <ImageButton
+        android:id="@+id/next_arrow1"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/settings_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/photo"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        app:layout_constraintTop_toTopOf="@id/next_arrow1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow1"
+        android:layout_marginStart="26dp"
+        app:cardCornerRadius="50dp"
+        android:backgroundTint="#EDEDED"
+        app:strokeColor="#EDEDED" />
+
+    <ImageView
+        android:id="@+id/photo_icon"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:src="@drawable/person_icon"
+        app:layout_constraintTop_toTopOf="@id/photo"
+        app:layout_constraintStart_toStartOf="@id/photo"
+        app:layout_constraintEnd_toEndOf="@id/photo"
+        app:layout_constraintBottom_toBottomOf="@id/photo"
+        android:contentDescription="@string/load_photo"
+        />
+
+    <TextView
+        android:id="@+id/full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/full_name"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow1"
+        app:layout_constraintStart_toStartOf="@id/photo"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow1"
+        android:layout_marginStart="90dp"
+        android:layout_marginBottom="51dp"
+        />
+
+    <TextView
+        android:id="@+id/email_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_temp"
+        android:fontFamily="@font/montserrat_regular"
+        android:textSize="12sp"
+        android:textColor="#ADB5BD"
+        app:layout_constraintTop_toTopOf="@id/next_arrow1"
+        app:layout_constraintStart_toStartOf="@id/photo"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow1"
+        android:layout_marginStart="90dp"
+        />
+
+
+    <ImageButton
+        android:id="@+id/next_arrow2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/car_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/uber_taxi"
+        app:layout_constraintTop_toTopOf="@id/next_arrow2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow2"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/booking_icon"/>
+
+    <TextView
+        android:id="@+id/booking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_booking"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow2"
+        app:layout_constraintStart_toStartOf="@id/car_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow2"
+        android:layout_marginStart="36dp"/>
+
+
+    <ImageButton
+        android:id="@+id/next_arrow3"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="18dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/theme_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintTop_toTopOf="@id/next_arrow3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow3"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/theme_icon"/>
+
+    <TextView
+        android:id="@+id/theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow3"
+        app:layout_constraintStart_toStartOf="@id/theme_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow3"
+        android:layout_marginStart="36dp"/>
+
+
+    <ImageButton
+        android:id="@+id/next_arrow4"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/notification_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bell"
+        app:layout_constraintTop_toTopOf="@id/next_arrow4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow4"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/bell_icon"/>
+
+    <TextView
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notifications"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow4"
+        app:layout_constraintStart_toStartOf="@id/notification_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow4"
+        android:layout_marginStart="36dp"/>
+
+
+    <ImageButton
+        android:id="@+id/next_arrow5"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/cash_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/banknotes"
+        app:layout_constraintTop_toTopOf="@id/next_arrow5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow5"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/cash_icon"/>
+
+    <TextView
+        android:id="@+id/connect_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_car"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow5"
+        app:layout_constraintStart_toStartOf="@id/cash_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow5"
+        android:layout_marginStart="36dp"/>
+
+    <View
+        android:id="@+id/separator_line"
+        android:layout_width="357dp"
+        android:layout_height="1.5dp"
+        android:background="#EDEDED"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"/>
+
+    <ImageButton
+        android:id="@+id/next_arrow6"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="2dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/help_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ask_icon"
+        app:layout_constraintTop_toTopOf="@id/next_arrow6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow6"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/help_icon"/>
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/help"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow6"
+        app:layout_constraintStart_toStartOf="@id/help_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow6"
+        android:layout_marginStart="36dp"/>
+
+
+    <ImageButton
+        android:id="@+id/next_arrow7"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentDescription="@string/next_arrow"
+        android:src="@drawable/next_arrow"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/next_arrow6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"
+        android:paddingStart="330dp"
+        android:paddingEnd="15dp"/>
+
+    <ImageView
+        android:id="@+id/invite_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mail_icon"
+        app:layout_constraintTop_toTopOf="@id/next_arrow7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow7"
+        android:layout_marginStart="26dp"
+        android:contentDescription="@string/cash_icon"/>
+
+    <TextView
+        android:id="@+id/inviting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inviting"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="14sp"
+        android:textColor="#29183B"
+        app:layout_constraintTop_toTopOf="@id/next_arrow7"
+        app:layout_constraintStart_toStartOf="@id/invite_icon"
+        app:layout_constraintBottom_toBottomOf="@id/next_arrow7"
+        android:layout_marginStart="36dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

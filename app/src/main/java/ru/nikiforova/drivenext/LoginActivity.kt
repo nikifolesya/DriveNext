@@ -7,6 +7,11 @@ import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import ru.nikiforova.drivenext.data.AppDatabase
+import at.favre.lib.crypto.bcrypt.BCrypt
 
 class LoginActivity : BaseActivity() {
 
@@ -18,6 +23,7 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_login)
 
         saveCurrentActivity()
@@ -31,13 +37,31 @@ class LoginActivity : BaseActivity() {
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            if (isValidEmail(email) && isValidPassword(password)) {
-                // Логика авторизации
-                saveLoginData(email, password)
-                startActivity(Intent(this, WelcomeActivity::class.java))
-                finish()
-            } else {
-                showToast("Введите корректные данные.")
+
+
+            when {
+                email.isEmpty() -> showToast("Введите адрес электронной почты.")
+                password.isEmpty() -> showToast("Введите пароль.")
+                !isValidEmail(email) -> showToast("Введите корректный адрес электронной почты.")
+                else -> {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val user = AppDatabase.getDatabase(this@LoginActivity).userDao().getUserByEmail(email)
+
+                        runOnUiThread {
+                            if (user != null) {
+                                if (verifyPassword(password, user.password)) {
+                                    saveLoginData(email, password)
+                                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                    finish()
+                                } else {
+                                    showToast("Неверный пароль.")
+                                }
+                            } else {
+                                showToast("Пользователь с таким email не найден.")
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -56,9 +80,8 @@ class LoginActivity : BaseActivity() {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    private fun isValidPassword(password: String): Boolean {
-        // Логика проверки пароля
-        return password.isNotEmpty()
+    private fun verifyPassword(inputPassword: String, hashedPassword: String): Boolean {
+        return BCrypt.verifyer().verify(inputPassword.toCharArray(), hashedPassword).verified
     }
 
     private fun saveLoginData(email: String, password: String) {

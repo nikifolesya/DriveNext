@@ -1,5 +1,6 @@
 package ru.nikiforova.drivenext
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.button.MaterialButton
 
@@ -13,8 +14,7 @@ class SuccessRegistrationActivity : BaseActivity() {
 
         val nextButton: MaterialButton = findViewById(R.id.next_btn)
         nextButton.setOnClickListener {
-
-            // startActivity(Intent(this, MainActivity::class.java))
+             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
     }

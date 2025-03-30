@@ -8,6 +8,8 @@ import android.widget.Toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.textfield.TextInputEditText
+import at.favre.lib.crypto.bcrypt.BCrypt
+
 
 class RegisterActivity : BaseActivity() {
 
@@ -36,12 +38,22 @@ class RegisterActivity : BaseActivity() {
             val password1 = passwordEditText1.text.toString()
             val password2 = passwordEditText2.text.toString()
 
-            // Проверка на валидность введённых данных
             when {
+                email.isEmpty() -> showToast("Введите адрес электронной почты.")
+                password1.isEmpty() || password2.isEmpty() -> showToast("Введите пароль.")
                 !isValidEmail(email) -> showToast("Введите корректный адрес электронной почты.")
+                !isValidPassword(password1) -> showToast("Пароль должен содержать минимум 6 символов, цифры и буквы.")
                 password1 != password2 -> showToast("Пароли не совпадают.")
-                !termsCheckBox.isChecked -> showToast("Необходимо согласиться с условиями обслуживания и политикой конфиденциальности.")
-                else -> startActivity(Intent(this, AdditionalInfoActivity::class.java))
+                !termsCheckBox.isChecked -> showToast("Необходимо согласиться с условиями.")
+                else -> {
+                    // Хэширование пароля
+                    val hashedPassword = BCrypt.withDefaults().hashToString(12, password1.toCharArray())
+                    // Переход к следующему экрану с передачей email и пароля
+                    val intent = Intent(this, AdditionalInfoActivity::class.java)
+                    intent.putExtra("email", email)
+                    intent.putExtra("password", hashedPassword)
+                    startActivity(intent)
+                }
             }
         }
 
@@ -52,6 +64,10 @@ class RegisterActivity : BaseActivity() {
 
     private fun isValidEmail(email: String): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    private fun isValidPassword(password: String): Boolean {
+        return password.length >= 6 && password.any { it.isDigit() } && password.any { it.isLetter() }
     }
 
     private fun saveCurrentActivity() {

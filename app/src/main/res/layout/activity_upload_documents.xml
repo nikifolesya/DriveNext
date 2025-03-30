@@ -45,8 +45,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:scaleType="centerCrop"
             android:background="@drawable/account_photo"
             android:contentDescription="@string/load_photo"/>
@@ -196,7 +196,7 @@
 
     <TextView
         android:id="@+id/upload_photo_txt1"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/load_photo"
         android:textSize="14sp"
@@ -236,7 +236,7 @@
 
     <TextView
         android:id="@+id/upload_photo_txt2"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/load_photo"
         android:textSize="14sp"
