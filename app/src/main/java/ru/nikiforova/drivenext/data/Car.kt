@@ -3,7 +3,7 @@ package ru.nikiforova.drivenext.data
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "cars")
+@Entity(tableName = "car")
 data class Car(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String,
@@ -11,5 +11,6 @@ data class Car(
     val price: String,
     val transmission: String,
     val engineType: String,
-    val imageResId: Int
+    val imageResId: Int,
+    var isSaved: Int
 )

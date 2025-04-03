@@ -17,5 +17,6 @@ data class User(
     val issueDate: String,
     val licenseFile: String,
     val passportFile: String,
-    val profilePicture: String
+    val profilePicture: String,
+    val registrationDate: String = ""
 )

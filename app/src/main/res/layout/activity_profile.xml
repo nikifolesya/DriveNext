@@ -53,7 +53,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@null"
-            android:src="@drawable/add_btn"
+            android:src="@drawable/add_photo"
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="-8dp"
             android:layout_marginEnd="-8dp"

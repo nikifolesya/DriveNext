@@ -51,4 +51,6 @@ dependencies {
     ksp(libs.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.bcrypt)
+    implementation(libs.glide)
+    ksp(libs.glide.compiler)
 }

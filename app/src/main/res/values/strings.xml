@@ -80,7 +80,7 @@
     <string name="change_password">Изменить пароль</string>
     <string name="google" translatable="false">Google</string>
     <string name="logout">Выйти из профиля</string>
-    <string name="joined">Присоединился в</string>
+    <string name="joined">Присоединился</string>
     <string name="looking_for_cars">Ищем подходящие автомобили</string>
     <string name="book">Забронировать</string>
     <string name="details">Детали</string>
@@ -90,6 +90,10 @@
     <string name="search_hint">Введите марку автомобиля</string>
     <string name="find_car">Давайте найдем автомобиль</string>
     <string name="search_result">Результаты поиска</string>
+    <string name="no_search_results">Нет доступных автомобилей</string>
+    <string name="search_btn">Найти</string>
+    <string name="saved" translatable="false">saved</string>
+    <string name="saved_txt">Сохраненные автомобили</string>
 
 
 </resources>

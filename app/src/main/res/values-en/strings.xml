@@ -58,7 +58,7 @@
     <string name="profile">Profile</string>
     <string name="change_password">Change password</string>
     <string name="logout">Log out of your profile</string>
-    <string name="joined">Joined in</string>
+    <string name="joined">Joined</string>
     <string name="looking_for_cars">Looking for suitable cars</string>
     <string name="book">Book</string>
     <string name="details">Details</string>
@@ -67,4 +67,7 @@
     <string name="search_hint">Enter the car brand</string>
     <string name="find_car">Let\'s find a car</string>
     <string name="search_result">Search results</string>
+    <string name="no_search_results">There are no cars available</string>
+    <string name="search_btn">Search</string>
+    <string name="saved_txt">Saved cars</string>
 </resources>

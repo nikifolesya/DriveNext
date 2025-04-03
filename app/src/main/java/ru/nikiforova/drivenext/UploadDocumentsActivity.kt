@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
@@ -23,6 +24,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.nikiforova.drivenext.data.AppDatabase
 import ru.nikiforova.drivenext.data.User
+import java.util.Date
+import ru.nikiforova.drivenext.utils.FileUtils
 
 
 class UploadDocumentsActivity : BaseActivity() {
@@ -40,6 +43,7 @@ class UploadDocumentsActivity : BaseActivity() {
 
     private var currentUploadType: UploadType? = null
     private var profilePictureUri: Uri? = null
+    private var savedProfileImagePath: String? = null
 
     private val requestImagePick = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
         uri?.let {
@@ -47,9 +51,20 @@ class UploadDocumentsActivity : BaseActivity() {
                 UploadType.LICENSE -> uploadLicenseText.text = getFileName(it)
                 UploadType.PASSPORT -> uploadPassportText.text = getFileName(it)
                 UploadType.PROFILE -> {
-                    profileImageView.setImageURI(it)
                     profilePictureUri = it
+
+                    // Сохраняем изображение с использованием FileUtils
+                    val email = intent.getStringExtra("email") ?: ""
+                    savedProfileImagePath = FileUtils.saveProfileImageToInternalStorage(this, email, it)
+
+                    savedProfileImagePath?.let { path ->
+                        // Загружаем сохраненное изображение
+                        Glide.with(this)
+                            .load(path)
+                            .into(profileImageView)
+                    }
                 }
+
                 else -> {}
             }
         } ?: run {
@@ -171,8 +186,9 @@ class UploadDocumentsActivity : BaseActivity() {
             val issueDate = issueDateEditText.text.toString()
             val licenseFile = uploadLicenseText.text.toString()
             val passportFile = uploadPassportText.text.toString()
-            val profilePicture = profilePictureUri?.toString() ?: ""
+            val profilePicturePath = savedProfileImagePath ?: ""
 
+            // Сохраняем путь изображения в базу данных
             val user = User(
                 email = email,
                 password = password,
@@ -185,7 +201,8 @@ class UploadDocumentsActivity : BaseActivity() {
                 issueDate = issueDate,
                 licenseFile = licenseFile,
                 passportFile = passportFile,
-                profilePicture = profilePicture
+                profilePicture = profilePicturePath, // Сохраняем путь
+                registrationDate = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(Date())
             )
 
             AppDatabase.getDatabase(this@UploadDocumentsActivity).userDao().insertUser(user)
